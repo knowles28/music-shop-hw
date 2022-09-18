@@ -1,16 +1,19 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Shop {
 
     private ArrayList<ISell> stock;
     private double till;
 
+    private HashMap<Integer, Customer> customerDB;
+
     public Shop(double till) {
         this.stock = new ArrayList<ISell>();
         this.till = till;
+        this.customerDB = new HashMap<>();
     }
 
-//    USE STREAMS??
     public int getStockSize() {
         return this.stock.size();
     }
@@ -53,5 +56,21 @@ public class Shop {
         return profit;
     }
 
+
+    public HashMap<Integer, Customer> getCustomerDB() {
+        return customerDB;
+    }
+
+    public void addCustomerToCustomerDB(Integer customerNumber, Customer customer){
+        this.customerDB.put(customerNumber, customer);
+    }
+
+    public String getCustomersFavouriteInstrument(Integer customerNumber){
+        if(this.customerDB.containsKey(customerNumber)){
+            return "Favourite instrument: " + this.customerDB.get(customerNumber).getFavouriteInstrument();
+        } else {
+            return "Sorry, customer number " + customerNumber + " is not in the database";
+        }
+    }
 
 }

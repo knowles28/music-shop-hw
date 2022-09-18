@@ -11,6 +11,7 @@ public class ShopTest {
 
     Shop shop;
 
+    Customer customer1;
 
     @Before
     public void setUp() {
@@ -18,6 +19,8 @@ public class ShopTest {
         guitar2 = new Guitar(InstrumentType.STRING,250.00,600.00,"Oak", GuitarType.ACOUSTIC, 6);
         guitarStrings = new GuitarStrings(2.00,6.00, guitar);
         shop = new Shop(1000);
+        customer1 = new Customer("Keith", "keith@cc.com", "bagpipes");
+
     }
 
 
@@ -84,6 +87,26 @@ public class ShopTest {
         shop.buyStockItem(guitar2);
         shop.buyStockItem(guitarStrings);
         assertEquals(754, shop.calculateProfitFromCurrentStock(),0.0);
+    }
+
+
+    @Test
+    public void canAddCustomerToCustomerDB(){
+        shop.addCustomerToCustomerDB(001, customer1);
+        assertEquals(1, shop.getCustomerDB().size());
+
+    }
+
+    @Test
+    public void canGetCustomersFavouriteInstrument(){
+        shop.addCustomerToCustomerDB(001, customer1);
+        assertEquals("Favourite instrument: bagpipes", shop.getCustomersFavouriteInstrument(001));
+    }
+
+    @Test
+    public void cannotGetCustomersFavouriteInstrumentIfNotInDB(){
+        shop.addCustomerToCustomerDB(1001, customer1);
+        assertEquals("Sorry, customer number 1002 is not in the database", shop.getCustomersFavouriteInstrument(1002));
     }
 
 }
