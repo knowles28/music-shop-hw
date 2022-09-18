@@ -1,6 +1,6 @@
-public class GuitarStrings extends Accessory {
+public class GuitarStrings extends SuperAccessory {
 
-    public GuitarStrings(Double purchasePrice, Double salePrice, Instrument associatedInstrument) {
+    public GuitarStrings(Double purchasePrice, Double salePrice, SuperInstrument associatedInstrument) {
         super(purchasePrice, salePrice, associatedInstrument);
     }
 }

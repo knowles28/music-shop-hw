@@ -1,11 +1,11 @@
-public class Accessory implements ISell {
+public abstract class SuperAccessory implements ISell {
 
     Double purchasePrice;
     Double salePrice;
 
-    Instrument associatedInstrument;
+    SuperInstrument associatedInstrument;
 
-    public Accessory(Double purchasePrice, Double salePrice,Instrument associatedInstrument) {
+    public SuperAccessory(Double purchasePrice, Double salePrice, SuperInstrument associatedInstrument) {
         this.purchasePrice = purchasePrice;
         this.salePrice = salePrice;
         this.associatedInstrument = associatedInstrument;
@@ -19,7 +19,7 @@ public class Accessory implements ISell {
         return salePrice;
     }
 
-    public Instrument getAssociatedInstrument() {
+    public SuperInstrument getAssociatedInstrument() {
         return associatedInstrument;
     }
 
@@ -27,7 +27,7 @@ public class Accessory implements ISell {
         this.salePrice = newSalePrice;
     }
 
-    public void setAssociatedInstrument(Instrument associatedInstrument) {
+    public void setAssociatedInstrument(SuperInstrument associatedInstrument) {
         this.associatedInstrument = associatedInstrument;
     }
 

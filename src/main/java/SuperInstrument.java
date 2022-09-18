@@ -1,11 +1,11 @@
-public class Instrument implements IPlay, ISell {
+public abstract class SuperInstrument implements IPlay, ISell {
 
     InstrumentType instrumentType;
     Double purchasePrice;
     Double salePrice;
     String colour;
 
-    public Instrument(InstrumentType instrumentType, Double purchasePrice, Double salePrice, String colour) {
+    public SuperInstrument(InstrumentType instrumentType, Double purchasePrice, Double salePrice, String colour) {
         this.instrumentType = instrumentType;
         this.purchasePrice = purchasePrice;
         this.salePrice = salePrice;

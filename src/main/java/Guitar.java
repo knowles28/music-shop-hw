@@ -1,4 +1,4 @@
-public class Guitar extends Instrument {
+public class Guitar extends SuperInstrument {
 
     private GuitarType guitarType;
     private int stringNumber;

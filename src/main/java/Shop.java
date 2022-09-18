@@ -23,24 +23,24 @@ public class Shop {
         this.till = newTill;
     }
 
-    public void buyStockItem(Instrument newItem){
+    public void buyStockItem(SuperInstrument newItem){
         this.stock.add(newItem);
         setTill(this.till - newItem.purchasePrice);
 
     }
 
-    public void buyStockItem(Accessory newItem){
+    public void buyStockItem(SuperAccessory newItem){
         this.stock.add(newItem);
         setTill(this.till - newItem.purchasePrice);
 
     }
 
-    public void sellStockItem(Instrument currentItem){
+    public void sellStockItem(SuperInstrument currentItem){
         this.stock.remove(currentItem);
         setTill(this.till + currentItem.salePrice);
     }
 
-    public void sellStockItem(Accessory currentItem){
+    public void sellStockItem(SuperAccessory currentItem){
         this.stock.remove(currentItem);
         setTill(this.till + currentItem.salePrice);
     }
