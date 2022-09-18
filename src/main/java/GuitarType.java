@@ -1,5 +1,3 @@
-package Instruments;
-
 public enum GuitarType {
 
     ELECTRIC,

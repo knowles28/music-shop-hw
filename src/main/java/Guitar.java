@@ -1,5 +1,3 @@
-import Instruments.GuitarType;
-
 public class Guitar extends Instrument {
 
     private GuitarType guitarType;
@@ -19,4 +17,10 @@ public class Guitar extends Instrument {
     public int getStringNumber() {
         return stringNumber;
     }
+
+    @Override
+    public String play() {
+        return "Oh it's just a little song called Stairway To Heaven, have you heard of it?";
+    }
+
 }

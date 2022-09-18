@@ -32,12 +32,10 @@ public class Instrument implements IPlay, ISell {
         this.salePrice = newPrice;
     }
 
-    @Override
     public String play() {
         return "MUSIC SOUNDS MUSIC SOUNDS";
     }
 
-    @Override
     public double calculateMarkup() {
         return getSalePrice() - getPurchasePrice();
     }
